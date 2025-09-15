@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECF2F7;
+}
+.contenido{
+    width: 60%;
+    display: grid;
+    grid-template-columns: .7fr 1fr;
+}
+.contenido .imagen{
+    border-radius: 15px 0px 0px 15px;
+    background-image: url("../images/drawers.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+}
+.contenido .info{
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 0px 15px 15px 0px;
+}
+.contenido .info .parrafo1{
+    font-size: 1.5rem;
+}
+.contenido .info .parrafo2{
+    text-align: justify;
+    margin: 25px 0;
+}
+.contenido .perfil{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contenido .perfil .fotoPerfil{
+    width: 12%;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.contenido .perfil .infoPerfil{
+    display: flex;
+    align-items: center;
+}
+.contenido .info .parrafo2, .contenido .perfil .infoPerfil .fecha{
+    color: #8d8d8d;
+}
+.contenido .perfil .compartir{
+    position: relative;
+}
+
+.contenido .perfil .compartir .redes{
+    position: absolute;
+    bottom: 105%;
+    left: -211%;
+    display: none;
+    width: max-content;
+    background-color: #495471;
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 10px;
+}
+.contenido .perfil .compartir .redes::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #495471 transparent transparent transparent;
+}
+.contenido .perfil .compartir .redes img{
+    margin: 0 5px;
+}
+.contenido .perfil .compartir .btnCompartir{
+    background-color: #ECF2F7;
+    padding: 10px;
+    clip-path: circle(40% at 50% 50%);
+    cursor: pointer;
+}
+.contenido .perfil .compartir .btnCompartir:hover{
+    background-color: #495471;
+    color: #fff;
+}
+.contenido .perfil .compartir .redes.activo {
+    display: flex;
+    align-items: center;
+}
+.contenido .perfil .infoPerfil.activo{
+    display: none;
+}
+.contenido .perfil.activo{
+    display: block;
+}
+.contenido .perfil .compartir .btnCompartir.activo{
+    margin-left: 90%;
+}
+    /* Hover solo en escritorio */
+@media (hover: hover) {
+    .contenido .perfil .compartir .btnCompartir:hover + .redes {
+        display: flex;
+        align-items: center;
+    }
+}
+@media (max-width: 1300px){
+    .contenido{
+        width: 80%;
+    }
+}
+@media (max-width: 1024px){
+    .contenido{
+        width: 90%;
+    }
+}
+@media (max-width: 900px){
+    .contenido{
+        width: 80%;
+        grid-template-columns: 1fr;
+    }
+    .contenido .imagen{
+        height: 30vh;
+        border-radius: 15px 15px 0px 0px;
+    }
+    .contenido .info{
+        padding: 20px 40px;
+    }
+    .contenido .perfil .compartir .btnCompartir{
+        position: relative;
+        z-index: 5;
+    }
+    .contenido .perfil .compartir .redes{
+        right: 0;
+        bottom: 0;
+        left: auto;
+        width: 100%;
+    }
+    .contenido .perfil .compartir .redes::after {
+        display: none;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Frontend Mentor | Article preview component</title>
+
+</head>
+<body>
+  <main class="contenido">
+    <div class="imagen">
+    </div>
+
+    <div class="info">
+      <p class="parrafo1"><strong>Shift the overall look and feel by adding these wonderful 
+      touches to furniture in your home</strong></p>
+
+      <p class="parrafo2">Ever been in a room and felt like something was missing? Perhaps 
+      it felt slightly bare and uninviting. I’ve got some simple tips 
+      to help you make any room feel complete.</p>
+
+      <div class="perfil">
+        <div class="infoPerfil">
+          <img class="fotoPerfil" src="images/avatar-michelle.jpg" alt="" srcset="">
+          <div>
+            <p class="nombre"><strong>Michelle Appleton</strong></p>
+            <p class="fecha">28 Jun 2020</p>
+          </div>
+        </div>
+        <div class="compartir">
+          <button class="btnCompartir"><img src="images/icon-share.svg" alt="" srcset=""></button>
+          <div class="redes">
+            <span>SHARE</span>
+            <img src="images/icon-facebook.svg" alt=""><img src="images/icon-twitter.svg" alt=""><img src="images/icon-pinterest.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btn = document.querySelector(".btnCompartir");
+      const redes = document.querySelector(".redes");
+      const perfil = document.querySelector(".infoPerfil");
+      const datosPerfil = document.querySelector(".perfil");
+
+      // Solo activar en móviles o si no hay hover
+      if (window.matchMedia("(hover: none)").matches || window.innerWidth <= 900) {
+        btn.addEventListener("click", function () {
+          redes.classList.toggle("activo");
+          perfil.classList.toggle("activo");
+          datosPerfil.classList.toggle("activo");
+          btn.classList.toggle("activo");
+        });
+      }
+    });
+  </script>
+</body>
+</html>

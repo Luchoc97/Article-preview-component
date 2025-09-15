@@ -1,2 +1,5 @@
-# Article-preview-component
-Repositorio para publicar desafío Article preview component de frontend mentor
+# Frontend Mentor - Article preview component
+
+![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)
+
+## Welcome! 👋
